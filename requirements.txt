@@ -1,0 +1,41 @@
+# Dépendances Python de ce projet (générées à partir des imports réels de
+# src/ et du notebook, versions figées sur l'environnement de développement
+# actuel — /usr/local/bin/python3, Python 3.12.2).
+
+# Données géospatiales / GTFS
+geopandas==1.1.4
+shapely==2.1.2
+rasterio==1.5.0
+gtfs-kit==12.3.1
+contextily==1.7.1
+
+# Réseau de transport multimodal (r5py -> R5/Conveyal, via une JVM embarquée)
+r5py==1.1.7
+
+# Traitement de données
+pandas==3.0.3
+numpy==2.5.1
+pyarrow==24.0.0
+openpyxl==3.1.5  # requis par pd.read_excel (lecture de BPE_gammes_equipements_2025.xlsx)
+
+# Cartes interactives et graphiques
+folium==0.20.0
+branca==0.8.2
+matplotlib==3.11.1
+mapclassify==2.10.0  # requis par geopandas.explore(scheme="NaturalBreaks")
+
+# HTTP / parsing HTML (scraping du logo de réseau, appels API geo.api.gouv.fr...)
+requests==2.34.2
+urllib3==2.7.0
+beautifulsoup4==4.15.0
+
+# Cache partagé Hugging Face (src/hf_cache.py)
+huggingface_hub==1.24.0
+
+# Notebook
+ipython==9.15.0
+
+# Dépendance système (PAS un paquet pip) requise par
+# src/build_data_agglo.osm_pbf_creator (découpage d'extraits OSM) :
+#   macOS : brew install osmium-tool
+#   Debian/Ubuntu : apt install osmium-tool
